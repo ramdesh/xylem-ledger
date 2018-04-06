@@ -1,0 +1,22 @@
+/**
+ * Write your model definitions here
+ */
+
+namespace org.rdeshapriya.xylem
+
+participant User identified by userName {
+  o String userName
+  o String firstName
+  o String lastName
+}
+
+asset Device identified by deviceId {
+  o String deviceId
+  o String type
+  o String token
+}
+
+transaction ChangeDeviceToken {
+  o String newToken
+  --> Device relatedDevice
+}
